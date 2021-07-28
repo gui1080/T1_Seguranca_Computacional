@@ -4,6 +4,6 @@ Alunos:
 
 Guilherme Braga, 17/0162290
 
-Gabriel Moretto, xx/yyyyyyy
+Gabriel Carvalho Moretto, 15/0154917
 
 Data de entrega: x/08/2021
