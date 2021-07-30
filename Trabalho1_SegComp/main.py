@@ -10,6 +10,7 @@
 # ------------------------------------------------
 
 from gerador_chave import keystream_gerador
+from cifrar import cifrador
 
 # ------------------------------------------------
 
@@ -21,9 +22,11 @@ if(op == 1):
 
     # passa a mensagem
     msg = input("Entre com a sua mensagem\n")
+    msg = msg.lower()   # trabalhando com letras minusculas
 
     # passa a chave
     key = input("Entre com a sua chave\n")
+    key = key.lower()   # trabalhando com letras minusculas
 
     # define tamanho da mensagem
     size = len(msg)
@@ -35,10 +38,13 @@ if(op == 1):
 
     # algoritmo aq
 
-    print(msg)
-    print(msg[0])
-    print(size)
-    print(keystream)
+    msg_cifrada = cifrador(msg, keystream, size)
+
+
+    #print(msg)
+    #print(msg[0])
+    #print(size)
+    #print(keystream)
 
 # Decifrar
 if(op == 2):
