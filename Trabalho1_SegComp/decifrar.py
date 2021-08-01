@@ -17,8 +17,7 @@ def decifrador(cifra, key, tamanho):
     cifra_num = [ord(letra) - 97 for letra in cifra]
 
     # testes
-    print("cifra[0]")
-    print(cifra_num[0])
+    # print("cifra[0]:",cifra_num[0])
 
     # a = 0, b = 1, c = 2...
 
@@ -26,8 +25,7 @@ def decifrador(cifra, key, tamanho):
     key_num = [ord(letra) - 97 for letra in key]
     
     # testes
-    print("key_num[0]")
-    print(key_num[0])
+    # print("key_num[0]:",key_num[0])
 
     # lista vazia que receberá mensagem decifrada
     msg_decifrada_num = []
@@ -56,28 +54,24 @@ def decifrador(cifra, key, tamanho):
 
     # a string no final é tudo junto pelo método "join", sem espaços, transformado em caractere
     fim = "".join([chr(c) for c in msg_decifrada_num])
-    
-    # testes
-    print("msgcifrada[0]")
-    print(msg_decifrada_num[0])
-    print("msg final")
-    print(fim)
+
+    # print("msg final:",fim)
 
     # ------------------------------------------------
 
     # parte extra, salvar o resultado por conveniência
-    salvar = input("Deseja salvar o resultado em um arquivo de texto?[Y/N]?\n\n")
+    # salvar = input("Deseja salvar o resultado em um arquivo de texto?[Y/N]?\n\n")
 
-    if(salvar == 'y' or salvar == 'Y'):
+    #if(salvar == 'y' or salvar == 'Y'):
 
-        nome_arquivo = "resultado_decifrado" + str(time.time())
+        # nome_arquivo = "resultado_decifrado" + str(time.time())
     
-        arquivo = open(nome_arquivo, 'w+')
+        # arquivo = open(nome_arquivo, 'w+')
 
-        arquivo.writelines("Resultado decifrado: " + fim)
+        # arquivo.writelines("Resultado decifrado: " + fim)
 
-        arquivo.close()
+        # arquivo.close()
 
-        print("Arquivo salvo!")
+        # print("Arquivo salvo!")
 
     return fim

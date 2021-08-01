@@ -21,6 +21,7 @@ from gerador_chave import keystream_gerador
 from cifrar import cifrador
 from decifrar import decifrador
 from atacar import ataque
+from salvar import salva
 
 # ------------------------------------------------
 
@@ -50,7 +51,8 @@ if(op == 1):
 
     # essa variavel recebe o resultado da operação
     msg_cifrada = cifrador(msg, keystream, size)
-    
+    print("menssagem cifrada:",msg_cifrada)
+    salva(msg_cifrada)
 
 # ------------------------------------------------
 
@@ -75,6 +77,8 @@ if(op == 2):
 
     # essa variavel recebe o resultado da operação
     msg_decifrada = decifrador(cifra, keystream, size)
+    print("msg final:",msg_decifrada)
+    salva(msg_decifrada)
 
 # ------------------------------------------------
 

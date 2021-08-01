@@ -11,16 +11,20 @@
 
 # ------------------------------------------------
 
-def ataque(cifra, tamanho):
-
-    print("Cifra recebida: " + cifra)
+def ataque(cifra):
     
     # seleciona lingua
-    print("Deseja usar frequências das letras em Inglês ou Português?\n\n1- Inglês\n2- Português\n\n")
-
+    op = int(input("Deseja usar frequências das letras em Inglês(1) ou Português(2)?\n"))
+    
     # algoritmo aq
 
-    return 1
+    if(op == 1):
+        print("implementaçao em ingles",op)
+        
+    if(op == 2):
+        print("implementacao em portugues",op)
+    else:
+        print("Selecione uma opção válida, encerrando programa")
 
 # Frequências em PT-BR
 # a 	14.63%

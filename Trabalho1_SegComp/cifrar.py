@@ -17,8 +17,7 @@ def cifrador(msg, key, tamanho):
     msg_num = [ord(letra) - 97 for letra in msg]
 
     # testes
-    print("msg[0]")
-    print(msg_num[0])
+    # print("msg[0]:",msg_num[0])
 
     # a = 0, b = 1, c = 2...
 
@@ -54,11 +53,8 @@ def cifrador(msg, key, tamanho):
     fim = "".join([chr(c) for c in msg_cifrada_num])
     
     
-    # testes
-    print("msgcifrada[0]")
-    print(msg_cifrada_num[0])
-    print("msg final")
-    print(fim)
+    return fim
+
 
     # a + b = c
     # pois 1 + 2 = 3 (estes numeros sendo a ordem no alfabeto)
@@ -66,20 +62,3 @@ def cifrador(msg, key, tamanho):
     # "aaaaaa aa" cifrado com key "abcd" tem que dar "abcdab cd"
 
     # ------------------------------------------------
-
-    # parte extra, salvar o resultado por conveniência
-    salvar = input("Deseja salvar o resultado em um arquivo de texto?[Y/N]?\n\n")
-
-    if(salvar == 'y' or salvar == 'Y'):
-
-        nome_arquivo = "resultado_cifrado" + str(time.time())
-    
-        arquivo = open(nome_arquivo, 'w+')
-
-        arquivo.writelines("Resultado cifrado: " + fim)
-
-        arquivo.close()
-
-        print("Arquivo salvo!")
-
-    return fim
