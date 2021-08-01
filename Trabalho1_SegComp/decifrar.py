@@ -6,12 +6,15 @@
 
 # Imports
 # ------------------------------------------------
-
-import time     # usado para gerar o nome do arquivo de saída, valor único por execução
-
+from gerador_chave import keystream_gerador
 # ------------------------------------------------
 
-def decifrador(cifra, key, tamanho):
+def decifrador(cifra, chave):
+
+    # define tamanho da mensagem
+    tamanho=len(cifra)
+    # gera keystream
+    key = keystream_gerador(chave, tamanho)
 
     # para cada letra na string, transforma em numero (posição relativa no alfabeto)
     cifra_num = [ord(letra) - 97 for letra in cifra]
@@ -54,24 +57,5 @@ def decifrador(cifra, key, tamanho):
 
     # a string no final é tudo junto pelo método "join", sem espaços, transformado em caractere
     fim = "".join([chr(c) for c in msg_decifrada_num])
-
-    # print("msg final:",fim)
-
-    # ------------------------------------------------
-
-    # parte extra, salvar o resultado por conveniência
-    # salvar = input("Deseja salvar o resultado em um arquivo de texto?[Y/N]?\n\n")
-
-    #if(salvar == 'y' or salvar == 'Y'):
-
-        # nome_arquivo = "resultado_decifrado" + str(time.time())
-    
-        # arquivo = open(nome_arquivo, 'w+')
-
-        # arquivo.writelines("Resultado decifrado: " + fim)
-
-        # arquivo.close()
-
-        # print("Arquivo salvo!")
 
     return fim

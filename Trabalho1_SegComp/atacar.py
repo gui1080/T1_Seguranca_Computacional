@@ -6,9 +6,8 @@
 
 # Imports
 # ------------------------------------------------
-
-# import time     
-
+from decifrar import decifrador 
+from gerador_chave import keystream_gerador
 # ------------------------------------------------
 
 def ataque(cifra):
@@ -20,11 +19,18 @@ def ataque(cifra):
 
     if(op == 1):
         print("implementaçao em ingles",op)
-        
     if(op == 2):
-        print("implementacao em portugues",op)
+        print("implementacao em portugues\n testes usando letras frquentes como chave\n",op)
+        printo=decifrador(cifra,"a")
+        print("letra a:",printo)
+        printo=decifrador(cifra,"e")
+        print("letra e:",printo)
+        printo=decifrador(cifra,"o")
+        print("letra o:",printo)
     else:
         print("Selecione uma opção válida, encerrando programa")
+
+    return 0
 
 # Frequências em PT-BR
 # a 	14.63%

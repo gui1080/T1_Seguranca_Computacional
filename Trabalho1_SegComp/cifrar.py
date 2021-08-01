@@ -6,12 +6,14 @@
 
 # Imports
 # ------------------------------------------------
-
-import time     # usado para gerar o nome do arquivo de saída, valor único por execução
-
+from gerador_chave import keystream_gerador
 # ------------------------------------------------
 
-def cifrador(msg, key, tamanho):
+def cifrador(msg, chave):
+    # define tamanho da mensagem
+    tamanho=len(msg)
+    # gera keystream
+    key = keystream_gerador(chave, tamanho)
 
     # para cada letra na string, transforma em numero (posição relativa no alfabeto)
     msg_num = [ord(letra) - 97 for letra in msg]

@@ -41,16 +41,8 @@ if(op == 1):
     key = input("Entre com a sua chave\n")
     key = key.lower()   # trabalhando com letras minusculas
 
-    # define tamanho da mensagem
-    size = len(msg)
-
-    # gera keystream
-    keystream = keystream_gerador(key, size)
-    # keystream é a parte da chave que será usada caso tamanho da chave for maior do que o tamanho da msg
-    # caso tamanho da msg seja maior, keystream é a chave repetida até chegar no tamanho correto!
-
     # essa variavel recebe o resultado da operação
-    msg_cifrada = cifrador(msg, keystream, size)
+    msg_cifrada = cifrador(msg, key)
     print("menssagem cifrada:",msg_cifrada)
     salva(msg_cifrada)
 
@@ -67,16 +59,8 @@ if(op == 2):
     key = input("Entre com a sua chave\n")
     key = key.lower()   # trabalhando com letras minusculas
 
-    # define tamanho da cifra
-    size = len(cifra)
-
-    # gera keystream
-    keystream = keystream_gerador(key, size)
-    # keystream é a parte da chave que será usada caso tamanho da chave for maior do que o tamanho da msg/cifra
-    # caso tamanho da msg seja maior, keystream é a chave repetida até chegar no tamanho correto!
-
     # essa variavel recebe o resultado da operação
-    msg_decifrada = decifrador(cifra, keystream, size)
+    msg_decifrada = decifrador(cifra, key)
     print("msg final:",msg_decifrada)
     salva(msg_decifrada)
 
