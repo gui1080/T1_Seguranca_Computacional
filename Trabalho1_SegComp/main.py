@@ -13,6 +13,7 @@
 #    - Cifrar (cifrar.py)
 #    - Decifrar (decifrar.py)
 #    - Atacar! (atacar.py)
+#    - Analisador de Frequência (freq.py)
 #    - Salvar resultado (salvar.py)
 
 # Imports
