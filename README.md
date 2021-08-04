@@ -18,11 +18,13 @@ Executar:
 
 > python3 main.py
 
-Testado em ambiente Linux, Ubuntu.
+Testado em ambiente Linux, Ubuntu 18.04.
 
 # Repositório
 
 https://github.com/gui1080/T1_Seguranca_Computacional
+
+O repositório se torna público e "read-only" após último dia reservado para a entrega do trabalho.
 
 # Algumas strings de teste
 
