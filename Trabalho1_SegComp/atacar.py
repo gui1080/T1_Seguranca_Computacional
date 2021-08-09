@@ -8,7 +8,8 @@
 # ------------------------------------------------
 from decifrar import decifrador 
 from gerador_chave import keystream_gerador
-from freq import pega_frequencia
+from freq import pega_frequencia_ing
+from freq import pega_frequencia_ptbr
 # ------------------------------------------------
 
 def ataque(cifra):
@@ -34,11 +35,17 @@ def ataque(cifra):
         if(cifra[i] != " " and j < 3):
             letras = letras + cifra[i]
             j = j + 1
+        
+        dist_sem_espaco = 0
             
         # caso já seja conhecido o grupo de 3 letras a ser analizado
         if(j == 3):
             # varre a string da cifra inteira vendo quantas vezes o grupo de letras se repetiu
             for a in range(tamanho):
+                
+                if(cifra[a] != " "):
+                    dist_sem_espaco = dist_sem_espaco + 1 
+                
                 if( a < (tamanho - 3)):
                     
                     # salvamos a quantidade de vezes que repetiu
@@ -52,9 +59,9 @@ def ataque(cifra):
                                 # se é a primeira repetição, guarda onde ela ocorreu
                                 # se é a segunda, pega a diferença de posição atual e primeira ocorrência
                                 if(repeticao == 0):
-                                    primeira_ocorrencia = a
+                                    primeira_ocorrencia = dist_sem_espaco
                                 if(repeticao > 0):
-                                    dist = a - primeira_ocorrencia    
+                                    dist = dist_sem_espaco - primeira_ocorrencia    
                                 repeticao = repeticao + 1
                                 
                         else:
@@ -64,9 +71,9 @@ def ataque(cifra):
                                 
                                 # guardamos resultado de distância
                                 if(repeticao == 0):
-                                    primeira_ocorrencia = a
+                                    primeira_ocorrencia = dist_sem_espaco
                                 if(repeticao > 0):
-                                    dist = a - primeira_ocorrencia     
+                                    dist = dist_sem_espaco - primeira_ocorrencia     
                                 repeticao = repeticao + 1
                                 
                             if((cifra[a+2] == " ")):  
@@ -75,9 +82,9 @@ def ataque(cifra):
                                     
                                     # guardamos resultado de distância
                                     if(repeticao == 0):
-                                        primeira_ocorrencia = a
+                                        primeira_ocorrencia = dist_sem_espaco
                                     if(repeticao > 0):
-                                        dist = a - primeira_ocorrencia     
+                                        dist = dist_sem_espaco - primeira_ocorrencia     
                                     repeticao = repeticao + 1  
 
             # se o grupo de letras repetiu em algum ponto, salvamos
@@ -108,7 +115,7 @@ def ataque(cifra):
         print("Distância entre repetição: " + str(itens[j]) + "\n")
         j = j + 1 
 
-    tamanho_key_chute = int(input("\n\nAlguma sugestão para o tamanho da key diante desta análise?\nInforme um número inteiro por favor.\n\n"))
+    tamanho_key_chute = int(input("\n\nSugestão para o tamanho da key diante desta análise?\nInforme um número inteiro por favor.\n\n"))
 
     # analizar frequencia de letras da lingua
     # ------------------------------------------------
@@ -124,12 +131,19 @@ def ataque(cifra):
         print("Iniciando análise para texto em Inglês!")
         
         # faz isso para cada letra "y" dentro do tamanho da sugestão de chave, pega um input com sugestão do deslocamento 
-        frequencia = pega_frequencia(cifra, tamanho_key_chute, 0)
+        for j in range(tamanho_key_chute):
+            print("\n\nANÁLISE PARA POSIÇÃO " + str(j) + " NA CIFRA DE TAMANHO SUGERIDO " + str(tamanho_key_chute))
+            frequencia = pega_frequencia_ing(cifra, tamanho_key_chute, j)
         
     # Português    
     if(op == 2):
         
         print("Iniciando análise para texto em Português!")
+        # faz isso para cada letra "y" dentro do tamanho da sugestão de chave, pega um input com sugestão do deslocamento 
+        for j in range(tamanho_key_chute):
+            print("\n\nANÁLISE PARA POSIÇÃO " + str(j) + " NA CIFRA DE TAMANHO SUGERIDO " + str(tamanho_key_chute))
+            frequencia = pega_frequencia_ptbr(cifra, tamanho_key_chute, j)
+        
     
     # Idioma inválido    
     if((op != 1) and (op != 2)):
