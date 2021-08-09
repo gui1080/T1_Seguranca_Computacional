@@ -21,7 +21,7 @@ def pega_frequencia_ing(cifra, tamanho_chave, intervalo):
     for i in range(26):
         freq_cifra.append(0)
     
-    print(freq_cifra)
+    # print(freq_cifra)
     
     # posição [0] é a quantidade de vezes que o "a" repetiu
     # posição [1] é a quantidade de vezes que o "b" repetiu
@@ -130,7 +130,7 @@ def pega_frequencia_ptbr(cifra, tamanho_chave, intervalo):
     for i in range(26):
         freq_cifra.append(0)
     
-    print(freq_cifra)
+    # print(freq_cifra)
     
     # posição [0] é a quantidade de vezes que o "a" repetiu
     # posição [1] é a quantidade de vezes que o "b" repetiu

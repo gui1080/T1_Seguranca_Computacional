@@ -113,9 +113,17 @@ def ataque(cifra):
         print("Vezes que repetiu: " + str(itens[j]))
         j = j + 1 
         print("Distância entre repetição: " + str(itens[j]) + "\n")
-        j = j + 1 
+        
+        mod = 1
+        if(itens[j] != 0):
+            for k in range(10):
+                if(k != 0):
+                    mod = (itens[j] % k)
+                if(mod == 0): 
+                    print("Distância diviśivel por " + str(k))
+        j = j + 1
 
-    tamanho_key_chute = int(input("\n\nSugestão para o tamanho da key diante desta análise?\nInforme um número inteiro por favor.\n\n"))
+    tamanho_key_chute = int(input("\n\nSugestão para o tamanho da key diante desta análise?\nInforme um número inteiro por favor.\nTenha como base os números dados préviamente, vendo qual número geralmente um conjunto de letras é divisível com maior frequência.\n\n"))
 
     # analizar frequencia de letras da lingua
     # ------------------------------------------------
