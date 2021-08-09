@@ -9,7 +9,7 @@ Gabriel Carvalho Moretto, 15/0154917
 
 Prof. João Gondim
 
-Data de entrega: 11/08/2021
+Data final de entrega: 11/08/2021
 
 
 # Para rodar o Trabalho
