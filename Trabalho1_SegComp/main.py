@@ -38,7 +38,7 @@ if(op == 1):
     # passa a mensagem
     msg = input("Entre com a sua mensagem\n")
     msg = msg.lower()   # trabalhando com letras minusculas, sem caracteres especiais
-    msg = msg.replace(',', "").replace('.', "").replace('-', "").replace('"', "").replace(':', "").replace(';', "")
+    msg = msg.replace(',', "").replace('.', "").replace('-', "").replace('"', "").replace(':', "").replace(';', "").replace("'", "")
 
     # passa a chave
     key = input("Entre com a sua chave\n")
@@ -57,7 +57,7 @@ if(op == 2):
     # passa a cifra
     cifra = input("Entre com a sua cifra\n")
     cifra = cifra.lower()   # trabalhando com letras minusculas, sem caracteres especiais
-    cifra = cifra.replace(',', "").replace('.', "").replace('-', "").replace('"', "").replace(':', "").replace(';', "")
+    cifra = cifra.replace(',', "").replace('.', "").replace('-', "").replace('"', "").replace(':', "").replace(';', "").replace("'", "")
 
     # passa a chave
     key = input("Entre com a sua chave\n")
@@ -76,7 +76,7 @@ if(op == 3):
     # passa a cifra
     cifra = input("Entre com a sua cifra\n")
     cifra = cifra.lower()   # trabalhando com letras minusculas, sem caracteres especiais
-    cifra = cifra.replace(',', "").replace('.', "").replace('-', "").replace('"', "").replace(':', "").replace(';', "")
+    cifra = cifra.replace(',', "").replace('.', "").replace('-', "").replace('"', "").replace(':', "").replace(';', "").replace("'", "")
 
     resultado = ataque(cifra)
 
